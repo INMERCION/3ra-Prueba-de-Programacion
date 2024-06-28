@@ -17,7 +17,8 @@ def menu_inicio():
     print("4.Guardar las ventas en un archivo.")
     print("5.Cargar las ventas desde un archivo.")
     print("6.Generar Boleta")
-    print("7.Salir del programa.")
+    print("7.Anular venta")
+    print("8.Salir del programa.")
 
 def registrar_ventas():
         cliente=input("Ingrese nombre del cliente: ")
@@ -120,6 +121,10 @@ def generar_boleta():
             break
     if not cliente_encontrado:
             print(f"Cliente {boleta} no tiene ningun pedido realizado.")
+def anular_venta():
+    global ventas
+    ventas=[]
+    print(f"las ventas han sido anuladas")            
         
      
 while True:
@@ -143,8 +148,10 @@ while True:
 
     elif opcion == '6':
         generar_boleta()
-
     elif opcion == '7':
+        anular_venta()    
+
+    elif opcion == '8':
         print("Saliendo del Programa.....") 
         break          
     else:
